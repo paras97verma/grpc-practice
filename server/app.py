@@ -11,7 +11,7 @@ class Users(users_pb2_grpc.UsersServicer):
         return users_pb2.GetUsersResponse(
             users=[
                 users_pb2.User(
-                    id= '1',
+                    id="1",
                     name="Paras Verma",
                     email="paras@verma.com",
                     password="paras@123",
@@ -28,5 +28,5 @@ def serve():
     server.wait_for_termination
 
 
-if __name__ == main():
+if __name__ == "__main__":
     serve()
