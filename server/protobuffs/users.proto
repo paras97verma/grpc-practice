@@ -1,0 +1,62 @@
+syntax = "proto3";
+package users;
+
+service Users {
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {}
+    rpc GetUserById (GetUserByIdRequest) returns (GetUserByIdReponse) {}
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
+    rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse) {}
+    rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse) {}
+}
+
+// User defination
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+}
+
+// GetUsers message
+message GetUsersRequest {
+}
+
+message GetUsersResponse {
+    repeated User users = 1;
+}
+
+// GetUserById message
+message GetUserByIdRequest {
+    string id = 1;
+}
+
+message GetUserByIdReponse{
+    User user = 1;
+}
+
+// CreateUser message
+message CreateUserRequest {
+    User user = 1;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
+
+// UpdateUser message
+message UpdateUserRequest {
+    User user = 1;
+}
+
+message UpdateUserResponse {
+    User user = 1;
+}
+
+// DeleteUser message
+message DeleteUserRequest {
+    string id = 1;
+}
+
+message DeleteUserResponse {
+    User user = 1;
+}
